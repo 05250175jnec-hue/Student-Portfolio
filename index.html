@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kezang Sherab | Computer Systems and Networking Student</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/background.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true">
+<div id="bgVideo" class="bg-video"></div>
+<div class="bg-scrim"></div>
+</div>
+
+<div id="enter" class="enter" role="dialog" aria-modal="true" aria-labelledby="enterName" hidden>
+<div>
+<p class="enter-name" id="enterName">Kezang Sherab</p>
+<p class="enter-role">Computer Systems and Networking Student</p>
+<button class="btn main" id="enterBtn" type="button">Enter portfolio ♪</button>
+<p class="enter-note">This site plays music. You can mute it with the ♪ button.</p>
+</div>
+</div>
+
+<header><div class="bar">
+<a class="logo" href="#home">Kezang Sherab</a>
+<nav id="nav" aria-label="Main">
+<a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#achievements">Achievements</a><a href="#education">Education</a><a href="#contact">Contact</a>
+</nav>
+<div><button class="icon-btn" id="sound" aria-label="Play theme music" aria-pressed="false" hidden>♪</button>
+<button class="icon-btn" id="theme" aria-label="Switch between light and dark theme">◐</button>
+<button class="icon-btn" id="menu" aria-label="Open menu" aria-expanded="false">☰</button></div>
+</div></header>
+
+<main>
+<section id="home">
+<canvas id="net" aria-hidden="true"></canvas>
+<svg class="flags" viewBox="0 0 1000 90" preserveAspectRatio="none" aria-hidden="true">
+<path d="M0 6 Q500 40 1000 6" fill="none" stroke="currentColor" stroke-width="2" opacity=".4"/>
+<g id="bunting"></g></svg>
+<div class="wrap hero">
+<div>
+<h1>Kezang Sherab</h1>
+<p class="role">I’m a <b id="typed"></b><span class="caret"></span></p>
+<p class="intro">Hi, I’m a student at Jigme Namgyel Engineering College (JNEC) studying Computer Systems and Networking. I’m passionate about technology, building networks, and learning new ways to solve real-world problems.</p>
+<div class="btns"><a class="btn main" href="#projects">See my projects</a><a class="btn" href="#contact">Get in touch</a></div>
+</div>
+<div class="avatar"><img src="assets/images/kezang.jpeg" alt="Portrait of Kezang Sherab"></div>
+</div>
+<p class="hint">Move your cursor over the network. The nodes follow it.</p>
+</section>
+
+<section id="about"><div class="wrap">
+<h2>About me</h2>
+<div class="about">
+<div>
+<p>I’m a Computer Systems and Networking student at JNEC with a strong interest in learning about Artificial Intelligence and how it can be used with modern networks and systems. I enjoy exploring new technologies and building practical skills.</p>
+<p>My goal is to grow into a skilled IT professional working in networking and AI-related fields.</p>
+</div>
+<div class="chips" aria-label="Interests"><span class="chip">Artificial Intelligence</span><span class="chip">Computer Networking</span><span class="chip">Linux</span><span class="chip">Web development</span><span class="chip">Python</span><span class="chip">Learning new tech</span></div>
+</div></div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Skills</h2>
+<p class="lead">Pick a group to see what I work with.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="skills" id="skillGrid"></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<h2>Projects</h2>
+<p class="lead">Things I’ve built while studying.</p>
+<div class="projects">
+<article class="card" style="--c:var(--blue)"><h3>Event_Hub</h3><p>An event management platform where users can browse, create, and manage events in one place.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a href="https://github.com/05250175jnec-hue" target="_blank" rel="noopener">View on GitHub</a></article>
+<article class="card" style="--c:var(--red)"><h3>Bhutan E-Sport Management System</h3><p>A system for organizing e-sport tournaments in Bhutan, covering teams, players, matches, and results.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a href="https://github.com/05250175jnec-hue" target="_blank" rel="noopener">View on GitHub</a></article>
+<article class="card empty"><h3>Next project</h3><p>A third project is coming. Add it by copying a card in the Projects section.</p></article>
+</div></div></section>
+
+<section id="achievements"><div class="wrap">
+<h2>Achievements</h2>
+<p class="lead">Certifications I’ve earned and projects I’ve delivered.</p>
+<ul class="certs">
+<li style="--c:var(--blue)">Becoming a Linux Server Admin<small>Packt, offered through Coursera · 22 Sep 2026</small><span class="cert-links"><a href="assets/certificates/linux-server-admin.pdf" target="_blank" rel="noopener">View certificate</a><a href="https://coursera.org/verify/M5R94JUH7BAF" target="_blank" rel="noopener">Verify on Coursera</a></span></li>
+<li style="--c:var(--red)">Master Full-Stack Web Development with Laravel &amp; PHP<small>Board Infinity, offered through Coursera · 15 Sep 2026</small><span class="cert-links"><a href="assets/certificates/full-stack-laravel-php.pdf" target="_blank" rel="noopener">View certificate</a><a href="https://coursera.org/verify/QGOR72UY403F" target="_blank" rel="noopener">Verify on Coursera</a></span></li>
+<li style="--c:var(--green)">Python Tkinter: Design, Build &amp; Integrate GUIs<small>EDUCBA, offered through Coursera · 15 Sep 2026</small><span class="cert-links"><a href="assets/certificates/python-tkinter.pdf" target="_blank" rel="noopener">View certificate</a><a href="https://coursera.org/verify/999K7YQDT9AQ" target="_blank" rel="noopener">Verify on Coursera</a></span></li>
+<li style="--c:var(--yellow)">Event_Hub<small>Event management platform built and published on GitHub</small></li>
+<li style="--c:var(--blue)">Bhutan E-Sport Management System<small>Tournament management system built and published on GitHub</small></li>
+</ul>
+</div></section>
+
+<section id="education"><div class="wrap">
+<h2>Education</h2>
+<div class="edu">
+<div class="tl">
+<div style="--c:var(--green)"><h3>Diploma in Computer Systems and Networking</h3><p>Jigme Namgyel Engineering College (JNEC). Expected graduation: 2027.</p></div>
+<div style="--c:var(--yellow)"><h3>Yoechen Central School</h3><p>Previous school.</p></div>
+</div>
+
+</div></div></section>
+
+<section id="contact"><div class="wrap">
+<h2>Contact</h2>
+<p class="lead">Send a message, or reach me directly.</p>
+<div class="contact">
+<div class="info">
+<a href="mailto:05250175.jnec@rub.edu.bt"><span class="label">Email</span>05250175.jnec@rub.edu.bt</a>
+<a href="tel:+97517336872"><span class="label">Phone number</span>17336872</a>
+<a href="https://github.com/05250175jnec-hue" target="_blank" rel="noopener"><span class="label">GitHub</span>github.com/05250175jnec-hue</a>
+<a href="https://www.linkedin.com/in/kezang-sherab-597515449/" target="_blank" rel="noopener"><span class="label">LinkedIn</span>https://www.linkedin.com/in/kezang-sherab-597515449/</a>
+<p><span class="label">Place</span>Dewathang, Bhutan</p>
+</div>
+<form id="form" novalidate>
+<label>Your name<input id="n" autocomplete="name"><span class="err"></span></label>
+<label>Your email<input id="e" type="email" autocomplete="email"><span class="err"></span></label>
+<label>Message<textarea id="m"></textarea><span class="err"></span></label>
+<button class="btn main" type="submit">Send message</button>
+<span id="ok" role="status"></span>
+</form>
+</div></div></section>
+</main>
+<footer>© <span id="yr"></span> Kezang Sherab. Built in Dewathang, Bhutan.</footer>
+<button class="icon-btn top" id="top" aria-label="Back to top">↑</button>
+
+<script src="js/utils.js" defer></script>
+<script src="js/background.js" defer></script>
+<script src="js/theme.js" defer></script>
+<script src="js/nav.js" defer></script>
+<script src="js/hero.js" defer></script>
+<script src="js/skills.js" defer></script>
+<script src="js/contact.js" defer></script>
+</body>
+</html>

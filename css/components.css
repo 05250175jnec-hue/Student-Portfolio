@@ -1,0 +1,229 @@
+/* Reusable components: buttons, chips, tabs, cards, skill meters, forms */
+
+.btn {
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+  background: transparent;
+  color: var(--ink);
+  transition: transform .15s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn.main {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+
+.chip {
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  font-weight: 500;
+}
+
+.chip:nth-child(4n+1) {
+  border-color: var(--blue);
+}
+
+.chip:nth-child(4n+2) {
+  border-color: var(--red);
+}
+
+.chip:nth-child(4n+3) {
+  border-color: var(--green);
+}
+
+.chip:nth-child(4n) {
+  border-color: var(--yellow);
+}
+
+.tab {
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font: 600 .95rem Figtree,sans-serif;
+  cursor: pointer;
+}
+
+.tab[aria-selected=true] {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+
+.skill {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px 20px;
+}
+
+.skill div {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.meter {
+  height: 8px;
+  border-radius: 8px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.meter i {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 8px;
+  background: var(--c);
+  transition: width .9s cubic-bezier(.2,.8,.2,1);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 8px solid var(--c);
+  border-radius: 6px 6px 24px 24px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card h3 {
+  font-size: 1.6rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags span {
+  font-size: .85rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+
+.card a {
+  margin-top: auto;
+  font-weight: 600;
+}
+
+.card.empty {
+  border: 2px dashed var(--line);
+  border-top: 2px dashed var(--line);
+  background: transparent;
+  justify-content: center;
+  text-align: center;
+}
+
+.certs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.certs li {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--c);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-weight: 600;
+}
+
+#achievements .certs {
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 16px;
+}
+
+.certs small {
+  display: block;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.cert-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 10px;
+  font-size: .92rem;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 24px;
+}
+
+label {
+  font-weight: 600;
+  display: grid;
+  gap: 6px;
+}
+
+input,
+textarea {
+  font: inherit;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  width: 100%;
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.err {
+  color: var(--red);
+  font-size: .88rem;
+  font-weight: 500;
+  min-height: 1.2em;
+}
+
+input[aria-invalid=true],
+textarea[aria-invalid=true] {
+  border-color: var(--red);
+}
+
+#ok {
+  font-weight: 600;
+  color: var(--green);
+}

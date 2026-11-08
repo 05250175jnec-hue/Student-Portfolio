@@ -1,0 +1,90 @@
+/* Live background: TikTok video behind the whole page, plus the music button */
+
+.bg {
+  --scrim-strength: 70%; /* higher = more readable text, lower = more visible video */
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none; /* clicks and hovers go to the page, never to the video */
+}
+
+.bg-video {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.bg-video.is-ready {
+  opacity: 1;
+}
+
+/* TikTok videos are portrait (9:16). The frame is scaled to cover any screen shape and slightly
+   oversized so the edges are cropped. On wide screens the middle of the video is what shows. */
+.bg-video iframe {
+  --w: max(100vw, 56.25vh);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--w) * 1.1);
+  height: calc(var(--w) * 1.1 * 16 / 9);
+  transform: translate(-50%, -50%);
+  border: 0;
+}
+
+/* Tints the video with the current theme colour so text stays readable in light and dark. */
+.bg-scrim {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--bg) var(--scrim-strength), transparent);
+}
+
+#sound[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+/* Enter screen: its click is what lets the browser play the video with sound. */
+.enter {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: calc(24px + env(safe-area-inset-top, 0px)) 24px calc(24px + env(safe-area-inset-bottom, 0px));
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  backdrop-filter: blur(14px);
+  transition: opacity 0.4s ease;
+}
+
+.enter[hidden] {
+  display: none;
+}
+
+.enter.is-leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.enter-name {
+  margin: 0 0 8px;
+  font: 800 clamp(2.2rem, 8vw, 4rem) / 1.05 'Bricolage Grotesque', Georgia, sans-serif;
+}
+
+.enter-role {
+  margin: 0 0 28px;
+  color: var(--muted);
+}
+
+.enter-note {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+body.entering {
+  overflow: hidden;
+}
